@@ -10,11 +10,14 @@ mkdir $out
 pushd $out
 git init
 # TODO
-echo " " > somefile
+echo "# My GitHub Pages README!" > README.md
 git add .
 git cm "Automatic ui-components documentation"
 git remote add origin $origin
-git branch -u origin/ghpages
+git fetch origin gh-pages
+git branch -u origin/gh-pages
+ls
+git push --force origin HEAD:gh-pages
 popd
 
 rm -rf $out
