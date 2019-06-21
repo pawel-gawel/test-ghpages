@@ -1,0 +1,9 @@
+#!/bin/bash
+
+# set -ex
+
+git checkout develop
+npm version $1
+git push --tags
+gren release
+
